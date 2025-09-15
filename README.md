@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# 📦 Hop! Entregas. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema em desenvolvimento voltado para **motoboys** e **pequenas empresas**, com o objetivo de facilitar o **gerenciamento de pequenas entregas** de forma simples, rápida e eficiente.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas  
 
-## Expanding the ESLint configuration
+O frontend do projeto está sendo desenvolvido com:  
+- [Vite](https://vitejs.dev/) – Build tool rápida e moderna  
+- [React](https://react.dev/) – Biblioteca para construção de interfaces  
+- [TailwindCSS](https://tailwindcss.com/) – Estilização ágil e responsiva  
+- [TanStack Query (React Query)](https://tanstack.com/query/latest) – Gerenciamento de estado assíncrono e cache de dados  
+- [Zod](https://zod.dev/) – Validação e tipagem de dados
+- [React Router DOM](https://reactrouter.com/) – Rotas e navegação  
+- [Axios](https://axios-http.com/) – Requisições HTTP  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📌 Funcionalidades (em desenvolvimento)  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Cadastro e gerenciamento de entregas  
+- Acompanhamento de status em tempo real  
+- Organização por entregador (motoboy)  
+- Relatórios simples para pequenas empresas  
+- Interface intuitiva e adaptada ao público-alvo
+- Autenticação de usuários com JWT
+- Rotas protegidas para áreas restritas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🗺️ Roadmap  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔜 Próximas implementações  
+- [ ] Autenticação de usuários (login e cadastro)  
+- [ ] Dashboard com estatísticas de entregas  
+- [ ] Notificações de atualização de status  
+- [ ] Mapa com rotas básicas para entregas  
+- [ ] Perfil do entregador com histórico de serviços  
+- [ ] Área para empresas acompanharem entregas em lote  
+
+### 💡 Futuras ideias  
+- [ ] Integração com WhatsApp para atualização de entregas  
+- [ ] Sistema de avaliação do motoboy  
+- [ ] Emissão de comprovantes digitais de entrega   
+
+
+---
+
+## ⚙️ Como Rodar o Projeto  
+
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/henrylsilveira/hop-entregas.git
+   cd hop-entregas
+   ```
+
+2. Instale as dependências:  
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:  
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse em:  
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## 📌 Status do Projeto  
+
+🛠️ Em desenvolvimento – novas funcionalidades estão sendo implementadas continuamente.  
+
