@@ -1,42 +1,43 @@
 import { useState } from "react"
-import { AnimatedParticles } from "./components/home/particles"
+import { AnimatedParticles } from "../../components/home/particles"
 
-import { Label } from "./components/ui/label"
-import { Input } from "./components/ui/input"
-import { Button } from "./components/ui/button"
+import { Label } from "../../components/ui/label"
+import { Input } from "../../components/ui/input"
+import { Button } from "../../components/ui/button"
 import { Building2, Eye, EyeOff,Truck } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
-export default function App() {
+export default function Home() {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const [error, setError] = useState("")
-  // const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
 
-  // const handleLogin = async (userType: "empresa" | "motoboy") => {
-  //   setLoading(true)
-  //   setError("")
+  const handleLogin = async (userType: "empresa" | "motoboy") => {
+    setLoading(true)
+    setError("")
 
-  //   // Simulação de autenticação
-  //   if (email && password) {
-  //     // Salvar tipo de usuário no localStorage para simular sessão
-  //     localStorage.setItem("userType", userType)
-  //     localStorage.setItem("userEmail", email)
+    // Simulação de autenticação
+    if (email && password) {
+      // Salvar tipo de usuário no localStorage para simular sessão
+      localStorage.setItem("userType", userType)
+      localStorage.setItem("userEmail", email)
 
-  //     if (userType === "empresa") {
-  //       router.push("/dashboard/empresa")
-  //     } else {
-  //       router.push("/dashboard/motoboy")
-  //     }
-  //   } else {
-  //     setError("Por favor, preencha todos os campos")
-  //   }
+      if (userType === "empresa") {
+        // router.push("/dashboard/empresa")
+      } else {
+        // router.push("/dashboard/motoboy")
+      }
+    } else {
+      setError("Por favor, preencha todos os campos")
+    }
 
-  //   setLoading(false)
-  // }
+    setLoading(false)
+  }
 
   return (
     <div className="min-h-screen flex">
@@ -90,11 +91,11 @@ export default function App() {
               <CardDescription>Entre com suas credenciais para acessar a plataforma</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* {error && (
+              {error && (
                 <Alert variant="destructive">
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
-              )} */}
+              )}
 
               <div className="space-y-2">
                 <Label htmlFor="email">E-mail</Label>
@@ -144,14 +145,16 @@ export default function App() {
                 </TabsList>
 
                 <TabsContent value="empresa" className="space-y-4 mt-6">
-                  <Button className="w-full h-12 text-lg" onClick={() => {}} disabled={false}>
-                    {/* {loading ? "Entrando..." : "Entrar como Empresa"} */}
+                  <Button className="relative w-full h-12 text-lg bg-white text-gray-600 shadow-md hover:text-white hover:bg-gradient-to-br from-green-600 via-green-700 to-green-800 transition-all duration-500 ease-in-out cursor-pointer" onClick={() => handleLogin("empresa")} disabled={loading}>
+                    {loading ? "Entrando..." : "Entrar como Empresa"}
+                    <AnimatedParticles />
                   </Button>
                 </TabsContent>
 
                 <TabsContent value="motoboy" className="space-y-4 mt-6">
-                  <Button className="w-full h-12 text-lg" onClick={() => {}} disabled={false}>
-                    {/* {loading ? "Entrando..." : "Entrar como Motoboy"} */}
+                  <Button className="relative w-full h-12 text-lg bg-white text-gray-600 shadow-md hover:text-white hover:bg-gradient-to-br from-green-600 via-green-700 to-green-800 transition-all duration-500 ease-in-out cursor-pointer" onClick={() => handleLogin("motoboy")} disabled={loading}>
+                    {loading ? "Entrando..." : "Entrar como Motoboy"}
+                    <AnimatedParticles />
                   </Button>
                 </TabsContent>
               </Tabs>
@@ -162,7 +165,7 @@ export default function App() {
                 </a>
                 <div className="text-sm text-gray-600">
                   Não tem conta?{" "}
-                  <a href="/cadastro" className="text-blue-600 hover:underline font-medium">
+                  <a href="/signup" className="text-blue-600 hover:underline font-medium">
                     Cadastre-se aqui
                   </a>
                 </div>
