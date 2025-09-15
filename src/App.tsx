@@ -5,7 +5,7 @@ import { Label } from "./components/ui/label"
 import { Input } from "./components/ui/input"
 import { Button } from "./components/ui/button"
 import { Building2, Eye, EyeOff,Truck } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/Card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs"
 
 export default function App() {
