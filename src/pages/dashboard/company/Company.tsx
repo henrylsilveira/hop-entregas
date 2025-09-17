@@ -21,7 +21,7 @@ interface Entrega {
   valor?: number
 }
 
-export default function DashboardEmpresa() {
+export default function Company() {
 
   // const [entregas, setEntregas] = useState<Entrega[]>([
   //   {

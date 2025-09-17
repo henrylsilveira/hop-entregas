@@ -40,7 +40,7 @@ export default function NewOrder() {
     setTimeout(() => {
       setSuccess("Pedido criado com sucesso! Redirecionando...")
       setTimeout(() => {
-       navigate("/dashboard/empresa")
+       navigate("/dashboard/company")
       }, 2000)
       setLoading(false)
     }, 1000)
