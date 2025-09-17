@@ -8,14 +8,14 @@ import { Building2, Eye, EyeOff,Truck } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-
+ import { useNavigate } from 'react-router-dom';
 export default function Home() {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-
+const navigate = useNavigate();
 
   const handleLogin = async (userType: "empresa" | "motoboy") => {
     setLoading(true)
@@ -28,9 +28,9 @@ export default function Home() {
       localStorage.setItem("userEmail", email)
 
       if (userType === "empresa") {
-        // router.push("/dashboard/empresa")
+        navigate("/dashboard/company")
       } else {
-        // router.push("/dashboard/motoboy")
+        navigate("/dashboard/delivery")
       }
     } else {
       setError("Por favor, preencha todos os campos")
